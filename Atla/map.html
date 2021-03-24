@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Image Gallery</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="atla.css">
+		<style>
+			h1 {
+				color: #FFA500;
+			}
+			a { 
+				color: #FFA500;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#gallery a').click(function(){
+					var galleryHref = $(this).attr('href');
+					var galleryAlt = $(this).attr('title');
+					$('figure img').attr({ src: galleryHref, alt: galleryAlt });
+					$('figcaption').html(galleryAlt);
+					return false;
+				});
+			});
+		</script>
+	</head>
+	<div id="wrapper">
+		<h1>Map of Avatar The last Airbender</h1>
+		<div id="gallery">
+			<ul>
+				<li>
+					<a href="atlaMap.jpg"  title="Full Map"><img src="atlaMap.jpg" width="200" height="150"  alt="Full Map" style="padding-left:100px;"></a>
+				</li>
+				<li>
+					<a href="earthMap.png" title="Earth Nation Map"><img src="earthMap.png" width="100" height="75" alt="Earth Nation Map" style="padding-left:50px;"></a>  
+					<a href="earthNation.jpg" title="Ba Sing Se"><img src="earthNation.jpg" width="100" height="75" alt="Ba Sing Se"></a>
+					<a href="omashu.png" title="Omashu"><img src="omashu.png" width="100" height="75" alt="Omashu"></a>
+				</li>
+				<li>
+					<a href="southernWaterTribe.png" title="Southern Water Tribe"><img src="southernWaterTribe.png" width="100" height="75" alt="Southern Water Tribe" style="padding-left:50px;"></a>
+					<a href="northWaterTribe.png" title="North Water Tribe"><img src="northWaterTribe.png" width="100" height="75" alt="Northern Water Tribe"></a>
+					<a href="swamp.png" title="Swamp Tribe"><img src="swamp.png" width="100" height="75" alt="Swamp Tribe"></a>
+				</li>
+				<li>
+					<a href="fireMap.png" title="Fire Nation Map"><img src="fireMap.png" width="100" height="75" alt="Fire Nation Map" style="padding-left:50px;"></a>
+					<a href="fNC.png" title="Fire Nation Capital"><img src="fNC.png" width="100" height="75" alt="Fire Nation Capital"></a>
+					<a href="fFC.png" title="Fire Fountain City"><img src="fFC.png" width="100" height="75" alt="Fire Fountain City"></a>
+				</li>
+				<li>
+					<a href="nAT.png" title="Northern Air Temple"><img src="nAT.png" width="100" height="75" alt="Northern Air Temple"></a>
+					<a href="sAT.png" title="Southern Air Temple"><img src="sAT.png" width="100" height="75" alt="Southern Air Temple"></a>
+					<a href="eAT.png" title="Eastern Air Temple"><img src="eAT.png" width="100" height="75" alt="Eastern Air Temple"></a>
+					<a href="wAT.png" title="Western Air Temple"><img src="wAT.png" width="100" height="75" alt="Western Air Temple"></a>
+				</li>
+			</ul>
+			<figure>
+				<img src="atlaMap.jpg" width="400" height="300" alt="Golden Gate Bridge">
+				<figcaption>Full Map</figcaption>
+			</figure>
+		</div>
+		<footer>
+			<img src="atlaFooter.png" alt="Atla Footer">
+			<h2>
+				<a href="..\atla.html">Team Avatar</a>
+			</h2>
+			<p>
+				&uarr; to return to the main menu.
+			</p>
+			<ul>
+				<li><a href="air.html">Airbending</a> | <a href="aang.html">Aang</a></li>
+				<li><a href="water.html">Waterbending</a> | <a href="katara.html">Katara</a></li>
+				<li><a href="earth.html">Earthbending</a> | <a href="toph.html">Toph</a></li>
+				<li><a href="fire.html">Firebending</a> | <a href="zuko.html">Zuko</a></li>
+				<li><a href="non.html">Nonbenders</a> | <a href="suki.html">Suki</a> | <a href="sokka.html">Sokka</a></li><br>
+			</ul>
+		</footer>
+	</div>
+</html>

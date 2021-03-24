@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Bending Quiz</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="atla.css">
+		<script src="httpS://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+		<script>
+		$(document).ready(function()
+		{	
+			$("#airbender").css("display", "none");
+			$('#waterbender').css("display", "none");
+			$('#earthbender').css("display", "none");
+			$('#firebender').css("display", "none");
+			
+			var elements = [];
+			elements[0] = 0;
+			elements[1] = 0;
+			elements[2] = 0;
+			elements[3] = 0;
+		
+			$("input[type='radio']").click(function(event)
+			{
+				var choice = $(this).attr('value');
+				
+				switch(choice)
+				{
+					case "air":
+						elements[0] = elements[0] + 1;
+						break;
+					case "water":
+						elements[1] = elements[1] + 1;
+						break;
+					case "earth":
+						elements[2] = elements[2] + 1;
+						break;
+					case "fire":
+						elements[3] = elements[3] + 1;
+						break;
+				}
+			});
+			
+			function keyElement()
+			{
+				var max = 0;
+				var maxIndex = 0;
+				if(elements[0] >= max)
+				{
+					max = elements[0];
+					maxIndex = 0;
+				}
+				if(elements[1] >= max)
+				{
+					max = elements[1]
+					maxIndex = 1;
+				}
+				if(elements[2] >= max)
+				{
+					max = elements[2]
+					maxIndex = 2;
+				}
+				if(elements[3] >= max)
+				{
+					max = elements[3]
+					maxIndex = 3;
+				}
+				return maxIndex;
+			};
+			
+			$('#btn').click(function()
+			{
+				var kE = keyElement();
+				switch(kE)
+				{
+					case 0:
+						$('#results').css("display", "block");
+						$('#airbender').css("display", "block");
+						$('#waterbender').css("display", "none");
+						$('#earthbender').css("display", "none");
+						$('#firebender').css("display", "none");
+						break;
+					case 1:
+						$('#results').css("display", "block");
+						$('#waterbender').css("display", "block");
+						$("#airbender").css("display", "none");
+						$('#earthbender').css("display", "none");
+						$('#firebender').css("display", "none");
+						break;
+					case 2:
+						$('#results').css("display", "block");
+						$('#earthbender').css("display", "block");
+						$("#airbender").css("display", "none");
+						$('#waterbender').css("display", "none");
+						$('#firebender').css("display", "none");
+						break;
+					case 3:
+						$('#results').css("display", "block");
+						$('#firebender').css("display", "block");
+						$("#airbender").css("display", "none");
+						$('#waterbender').css("display", "none");
+						$('#earthbender').css("display", "none");
+						break;
+				}
+			});
+		});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<header>
+		<img src="atlaHeader.png" alt="ATLA Title">
+	</header>
+	<div id="wrapper">
+		<nav>
+			| <a href="air.html">Airbending</a> | 
+			<a href="water.html">Waterbending</a> |
+			<a href="earth.html">Earthbending</a> |
+			<a href="fire.html">Firebending</a> |
+		</nav>
+		<div id="formRight">
+			<ul>
+				<li><a href="bendQuiz.html" style="color:#F0F8FF;">Which element would you bend?</a></li><br>
+				<li><a href="trivia.html" style="color:#F0F8FF;">Trivia</a><li><br>
+				<li><a href="map.html" style="color:#F0F8FF;">Map</a></li><br>
+			</ul>
+			<img src="airSymbol.jpg" alt="Air Symbol">
+			<img src="waterSymbol.jpg" alt="Water Symbol">
+			<img src="earthSymbol.jpg" alt="Earth Symbol">
+			<img src="fireSymbol.jpg" alt="Fire Symbol">
+			<img src="airSymbol.jpg" alt="Air Symbol">
+			<img src="waterSymbol.jpg" alt="Water Symbol">
+			<img src="earthSymbol.jpg" alt="Earth Symbol">
+			<img src="fireSymbol.jpg" alt="Fire Symbol">
+		</div>
+		<form id="bendTest">
+			<div id="q1">
+				<h2>
+					1) Which element would you want to bend?
+				</h2>
+				<label><input type="radio" name="q1" value="air">Air</label><br>
+				<label><input type="radio" name="q1" value='water'>Water</label><br>
+				<label><input type="radio" name="q1" value='earth'>Earth</label><br>
+				<label><input type="radio" name="q1" value='fire'>Fire</label><br>
+			</div>
+			<div id="q2">
+				<h2>
+					2) Which subbending ability would you want?
+				</h2>
+				<label><input type="radio" name="q2" value="air">Flight</label><br>
+				<label><input type="radio" name="q2" value='fire'>Lightning Generation</label><br>
+				<label><input type="radio" name="q2" value='water'>Bloodbending</label><br>
+				<label><input type="radio" name="q2" value='earth'>Metalbending</label><br>
+			</div>
+			<div id="q3">
+				<h2>
+					3) Choose a personality trait that you identify with:
+				</h2>
+				<label><input type="radio" name="q3" value="earth">Persistent</label><br>
+				<label><input type="radio" name="q3" value='fire'>Passionate</label><br>
+				<label><input type="radio" name="q3" value='water'>Easy Going</label><br>
+				<label><input type="radio" name="q3" value='air'>Carefree</label><br>
+			</div>
+			<img src="avatar.jpg" alt="Avatar Picture">
+			<div id="q4">
+				<h2>
+					4) Choose another one:
+				</h2>
+				<label><input type="radio" name="q4" value="air">Fun</label><br>
+				<label><input type="radio" name="q4" value='earth'>Strong</label><br>
+				<label><input type="radio" name="q4" value='fire'>Driven</label><br>
+				<label><input type="radio" name="q4" value='water'>Open-Minded</label><br>
+			</div>
+			<div id="q5">
+				<h2>
+					5) What is a bad trait you possess?
+				</h2>
+				<label><input type="radio" name="q5" value="fire">Impatient</label><br>
+				<label><input type="radio" name="q5" value='earth'>Stubborn</label><br>
+				<label><input type="radio" name="q5" value='air'>Irresponsible</label><br>
+				<label><input type="radio" name="q5" value='water'>Inconsistent</label><br>
+			</div>
+			<div id="q6">
+				<h2>
+					6) Choose a mythical creature:
+				</h2>
+				<label><input type="radio" name="q6" value="air">Griffin</label><br>
+				<label><input type="radio" name="q6" value='water'>Mermaid</label><br>
+				<label><input type="radio" name="q6" value='fire'>Dragon</label><br>
+				<label><input type="radio" name="q6" value='earth'>Unicorn</label><br>
+			</div>
+			<div id="q7">
+				<h2>
+					7) Where would you live?
+				</h2>
+				<label><input type="radio" name="q7" value="air">In the mountains</label><br>
+				<label><input type="radio" name="q7" value='earth'>In the forest</label><br>
+				<label><input type="radio" name="q7" value='water'>On the beach</label><br>
+				<label><input type="radio" name="q7" value='fire'>In the desert</label><br>
+			</div>
+			<div id="q8">
+				<h2>
+					8) What mode of transportation do you enjoy the most?
+				</h2>
+				<label><input type="radio" name="q8" value="earth">Maglev Train</label><br>
+				<label><input type="radio" name="q8" value='water'>Yacht</label><br>
+				<label><input type="radio" name="q8" value='air'>Plane</label><br>
+				<label><input type="radio" name="q8" value='fire'>Automobile</label><br>
+			</div>
+			<img src="avatar1.jpg" alt="Avatar Picture">
+			<div id="q9">
+				<h2>
+					9) Choose a sense:
+				</h2>
+				<label><input type="radio" name="q9" value="water">Smell</label><br>
+				<label><input type="radio" name="q9" value='air'>Hearing</label><br>
+				<label><input type="radio" name="q9" value='fire'>Sight</label><br>
+				<label><input type="radio" name="q9" value='earth'>Touch</label><br>
+			</div>
+			<div id="q10">
+				<h2>
+					10) Choose your favorite season:
+				</h2>
+				<label><input type="radio" name="q10" value="air">Spring</label><br>
+				<label><input type="radio" name="q10" value='fire'>Summer</label><br>
+				<label><input type="radio" name="q10" value='earth'>Fall</label><br>
+				<label><input type="radio" name="q10" value='water'>Winter</label><br>
+			</div>
+			<div id="q11">
+				<h2>
+					11) Choose your favorite Avatar:
+				</h2>
+				<label><input type="radio" name="q11" value="air">Wan</label><br>
+				<label><input type="radio" name="q11" value='air'>Yangchen</label><br>
+				<label><input type="radio" name="q11" value='water'>Kuruk</label><br>
+				<label><input type="radio" name="q11" value='earth'>Kyoshi</label><br>
+				<label><input type="radio" name="q11" value='fire'>Roku</label><br>
+				<label><input type="radio" name="q11" value='air'>Aang</label><br>
+				<label><input type="radio" name="q11" value='water'>Korra</label><br>
+			</div>
+			<div id="q12">
+				<h2>
+					12) Choose your favorite Team Avatar member:
+				</h2>
+				<label><input type="radio" name="q12" value="water">Katara</label><br>
+				<label><input type="radio" name="q12" value='water'>Sokka</label><br>
+				<label><input type="radio" name="q12" value='earth'>Suki</label><br>
+				<label><input type="radio" name="q12" value='earth'>Toph</label><br>
+				<label><input type="radio" name="q12" value='fire'>Zuko</label><br>
+				<label><input type="radio" name="q12" value='fire'>Asami</label><br>
+				<label><input type="radio" name="q12" value='earth'>Bolin</label><br>
+				<label><input type="radio" name="q12" value='fire'>Mako</label><br><br>
+			</div>
+			<input type="button" value="Enter" id="btn" class="button">
+		</form>
+		<div id="results">
+			<div id="airbender">
+				<h2>
+					You are an <br><br>Airbender
+				</h2>
+			</div>
+			<div id="waterbender">
+				<h2>
+					You are a  <br><br>Waterbender
+				</h2>
+			</div>
+			<div id="earthbender">
+				<h2>
+					You are an <br><br>Earthbender
+				</h2>
+			</div>
+			<div id="firebender">
+				<h2>
+					You are a <br><br>Firebender
+				</h2>
+			</div>
+			<p>
+				Congratulations, if you would like to try again refresh the page.
+			</p>
+		</div>
+		<footer>
+			<img src="atlaFooter.png" alt="Atla Footer">
+			<h2>
+				<a href="..\atla.html">Team Avatar</a>
+			</h2>
+			<p>
+				&uarr; to return to the main menu.
+			</p>
+			<ul>
+				<li><a href="air.html">Airbending</a> | <a href="aang.html">Aang</a></li>
+				<li><a href="water.html">Waterbending</a> | <a href="katara.html">Katara</a></li>
+				<li><a href="earth.html">Earthbending</a> | <a href="toph.html">Toph</a></li>
+				<li><a href="fire.html">Firebending</a> | <a href="zuko.html">Zuko</a></li>
+				<li><a href="non.html">Nonbenders</a> | <a href="suki.html">Suki</a> | <a href="sokka.html">Sokka</a></li><br>
+			</ul>
+		</footer>
+	</div>
+</html>

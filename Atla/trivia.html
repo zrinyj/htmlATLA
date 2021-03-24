@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Trivia</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="atla.css">
+	</head>
+	<script src="httpS://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+	<script>
+		$(document).ready(function()
+		{
+			$('#quizEasy').css("display", "none");
+			$('#quizChal').css("display", "none");
+			$('#end').css("display", "none");
+			
+			$('input[type="radio"]').click(function(event)
+			{
+				var choice = $(this).attr('id');
+				
+				switch(choice)
+				{
+					case "easyQuiz":
+						$('#quizEasy').css("display", "block");
+						$('#q1').css("display", "block");
+						$('#q2').css("display", "none");
+						$('#q3').css("display", "none");
+						$('#q4').css("display", "none");
+						$('#q5').css("display", "none");
+						$('#q6').css("display", "none");
+						$('#q7').css("display", "none");
+						$('#q8').css("display", "none");
+						$('#q9').css("display", "none");
+						$('#q10').css("display", "none");
+						$('#quizChal').css("display", "none");
+						$('#end').css("display", "none");
+						break;
+					case "chalQuiz":
+						$('#quizChal').css("display", "block");
+						$('#q11').css("display", "block");
+						$('#q12').css("display", "none");
+						$('#q13').css("display", "none");
+						$('#q14').css("display", "none");
+						$('#q15').css("display", "none");
+						$('#q16').css("display", "none");
+						$('#q17').css("display", "none");
+						$('#q18').css("display", "none");
+						$('#q19').css("display", "none");
+						$('#q20').css("display", "none");
+						$('#quizEasy').css("display", "none");
+						$('#end').css("display", "none");
+						break;
+				}
+			});
+		
+			$('li').click(function(event)
+			{
+				var choice = $(this).attr('name');
+				
+				switch(choice)
+				{
+					case "aang":
+						$(this).toggleClass('green');
+						$('#q2').css("display", "block");
+						break;
+					case "air":
+						$(this).toggleClass('green');
+						$('#q3').css("display", "block");
+						break;
+					case "capital":
+						$(this).toggleClass('green');
+						$('#q4').css("display", "block");
+						break;
+					case "all":
+						$(this).toggleClass('green');
+						$('#q5').css("display", "block");
+						break;
+					case "suki":
+						$(this).toggleClass('green');
+						$('#q6').css("display", "block");
+						break;
+					case "head":
+						$(this).toggleClass('green');
+						$('#q7').css("display", "block");
+						break;
+					case "sokka":
+						$(this).toggleClass('green');
+						$('#q8').css("display", "block");
+						break;
+					case "atloa":
+						$(this).toggleClass('green');
+						$('#q9').css("display", "block");
+						break;
+					case "sneeze":
+						$(this).toggleClass('green');
+						$('#q10').css("display", "block");
+						break;
+					case "iroh":
+						$(this).toggleClass('green');
+						$('#end').css("display", "block");
+						break;
+					case "li":
+						$(this).toggleClass('green');
+						$('#q12').css("display", "block");
+						break;
+					case "waterfall":
+						$(this).toggleClass('green');
+						$('#q13').css("display", "block");
+						break;
+					case "wood":
+						$(this).toggleClass('green');
+						$('#q14').css("display", "block");
+						break;
+					case "mother":
+						$(this).toggleClass('green');
+						$('#q15').css("display", "block");
+						break;
+					case "passion":
+						$(this).toggleClass('green');
+						$('#q16').css("display", "block");
+						break;
+					case "badgerFrog":
+						$(this).toggleClass('green');
+						$('#q17').css("display", "block");
+						break;
+					case "wanshitong":
+						$(this).toggleClass('green');
+						$('#q18').css("display", "block");
+						break;
+					case "bounty":
+						$(this).toggleClass('green');
+						$('#q19').css("display", "block");
+						break;
+					case "jin":
+						$(this).toggleClass('green');
+						$('#q20').css("display", "block");
+						break;
+					case "energybending":
+						$(this).toggleClass('green');
+						$('#end').css("display", "block");
+						break;
+					case "wrong":
+						$(this).toggleClass('red');
+						break;
+				}
+			});
+		});
+    </script>
+	<style>
+		.red {
+			color: red;
+		}
+		.green {
+			color: #228B22;
+		}
+		#quizEasy {
+			display: none;
+		#quizChal {
+			display: none;
+		}
+	</style>
+	<header>
+		<img src="atlaHeader.png" alt="ATLA Title">
+	</header>
+	<div id="wrapper">
+		<nav>
+			| <a href="air.html">Airbending</a> | 
+			<a href="water.html">Waterbending</a> |
+			<a href="earth.html">Earthbending</a> |
+			<a href="fire.html">Firebending</a> |
+		</nav>
+		<div id="formRight">
+			<ul>
+				<li><a href="bendQuiz.html" style="color:#F0F8FF;">Which element would you bend?</a></li><br>
+				<li><a href="trivia.html" style="color:#F0F8FF;">Trivia</a><li><br>
+				<li><a href="map.html" style="color:#F0F8FF;">Map</a></li><br>
+			</ul>
+		</div>
+		<div height="500px;">
+			<h1>
+				Trivia
+			</h1>
+			<p>
+				This trivia offers two difficulties, Easy or Challenging. Each has ten questions for you to answer.
+				Click the radio button below and proceed with the test. Correct answers will be <label class="green">Green</label>. 
+				Once you find the correct answer the next question will appear.Wrong answers will be <label class="red">Red</label>.<br>
+			</p>
+			<input type="radio" name="typeQuiz" id="easyQuiz">Easy
+			<input type="radio" name="typeQuiz" id="chalQuiz">Challenging
+		</div>
+		<form id="quizEasy">
+			<div id="q1">
+				<h2>
+					1) What is the avatar's name?
+				</h2>
+				<ul>
+					<li id="q" name='aang'>A. Aang</li>
+					<li id="q" name='wrong'>B. Katara</li>
+					<li id="q" name='wrong'>C. Sokka</li>
+					<li id="q" name='wrong'>D. Suki</li>
+				</ul>
+			</div>
+			<div id="q2">
+				<h2>
+					2) What element did Aang bend originally?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Fire</li>
+					<li id="q" name='wrong'>B. Water</li>
+					<li id="q" name='air'>C. Air</li>
+					<li id="q" name='wrong'>D. Earth</li>
+				</ul>
+			</div>
+			<div id="q3">
+				<h2>
+					3) What is the Fire Nation's capital?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Omashu</li>
+					<li id="q" name='wrong'>B. Ba Sing Se</li>
+					<li id="q" name='wrong'>C. Western Air Temple</li>
+					<li id="q" name='capital'>D. Capital City</li>
+				</ul>
+			</div>
+			<div id="q4">
+				<h2>
+					4) Who is Zuko?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. A Banished Traitor</li>
+					<li id="q" name='wrong'>B. Aang's Firebending Teacher</li>
+					<li id="q" name='wrong'>C. A Prince</li>
+					<li id="q" name='all'>D. All of the Above</li>
+				</ul>
+			</div>
+			<div id="q5">
+				<h2>
+					5) Who is not one of Aang's teachers?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Katara</li>
+					<li id="q" name='suki'>B. Suki</li>
+					<li id="q" name='wrong'>C. Toph</li>
+					<li id="q" name='wrong'>D. Zuko</li>
+				</ul>
+			</div>
+			<div id="q6">
+				<h2>
+					6) What is Toph's phrase when teaching Aang?
+				</h2>
+				<ul>
+					<li id="q" name='head'>A. Hit it head on</li>
+					<li id="q" name='wrong'>B. Strong like a rock</li>
+					<li id="q" name='wrong'>C. Unbreakable</li>
+					<li id="q" name='wrong'>D. Must be fearless</li>
+				</ul>
+			</div>
+			<div id="q7">
+				<h2>
+					7) Who is not a bender?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Katara</li>
+					<li id="q" name='wrong'>B. Ozai</li>
+					<li id="q" name='sokka'>C. Sokka</li>
+					<li id="q" name='wrong'>D. Zuko</li>
+				</ul>
+			</div>
+			<div id="q8">
+				<h2>
+					8) What is another name for the title, "Avatar: The Last Airbender"?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Avatar and Friends</li>
+					<li id="q" name='wrong'>B. The Odyssey of the Avatar</li>
+					<li id="q" name='wrong'>C. Avatar: Aang's Journey</li>
+					<li id="q" name='atloa'>D. Avatar: The Legend of Aang</li>
+				</ul>
+			</div>
+			<div id="q9">
+				<h2>
+					9) What was the first Airbending talent showed by Aang?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Air scooter</li>
+					<li id="q" name='sneeze'>B. Sneeze sending him 10ft in the air</li>
+					<li id="q" name='wrong'>C. Jumping off Appa and flying</li>
+					<li id="q" name='wrong'>D. Air ball juggling</li>
+				</ul>
+			</div>
+			<div id="q10">
+				<h2>
+					10) Who is Zuko's uncle?
+				</h2>
+				<ul>
+					<li id="q" name='iroh'>A. Iroh</li>
+					<li id="q" name='wrong'>B. Azula</li>
+					<li id="q" name='wrong'>C. Ty Lee</li>
+					<li id="q" name='wrong'>D. Pau</li>
+				</ul>
+			</div>
+		</form>
+		<form id="quizChal">
+			<div id="q11">
+				<h2>
+					1) Who is not a known avatar?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Aang</li>
+					<li id="q" name='li'>B. Li</li>
+					<li id="q" name='wrong'>C. Korra</li>
+					<li id="q" name='wrong'>D. Yangchen</li>
+					<li id="q" name='wrong'>E. Wan</li>
+				</ul>
+			</div>
+			<div id="q12">
+				<h2>
+					2) What does Katara's name mean?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Water Spirit</li>
+					<li id="q" name='wrong'>B. Caring</li>
+					<li id="q" name='wrong'>C. Survivor</li>
+					<li id="q" name='waterfall'>D. Redirected Spanish word for waterfall</li>
+					<li id="q" name='wrong'>E. French word for flowing water</li>
+				</ul>
+			</div>
+			<div id="q13">
+				<h2>
+					3) What can earthbenders not bend?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Lava</li>
+					<li id="q" name='wrong'>B. Earth</li>
+					<li id="q" name='wood'>C. Wood</li>
+					<li id="q" name='wrong'>D. Metal</li>
+					<li id="q" name='wrong'>E. Sand</li>
+				</ul>
+			</div>
+			<div id="q14">
+				<h2>
+					4) Where did Zuko get the Blue Spirit mask?
+				</h2>
+				<ul>
+					<li id="q" name='mother'>A. From his mother</li>
+					<li id="q" name='wrong'>B. From Iroh when he was invading Ba Sing Se</li>
+					<li id="q" name='wrong'>C. He made the mask himself</li>
+					<li id="q" name='wrong'>D. It was a gift for him being the prince</li>
+					<li id="q" name='wrong'>E. It is unknown where it came from</li>
+				</ul>
+			</div>
+			<div id="q15">
+				<h2>
+					5) Finish the quote [Iroh to Zuko]..."Who thought when we came to this city
+					as refugees, I'd end up owning my own tea shop?...
+				</h2>
+				<ul>
+					<li id="q" name='passion'>A. Follow your passion Zuko, and life will reward you.</li>
+					<li id="q" name='wrong'>B. Life is full of mysteries, but following its route can be rewarding</li>
+					<li id="q" name='wrong'>C. Strange how luck and timing bends the rewards life has to give</li>
+					<li id="q" name='wrong'>D. Zuko, one must understand their passion to truly embrace life's presents</li>
+					<li id="q" name='wrong'>E. It would never of happenned without passion and kindness</li>
+				</ul>
+			</div>
+			<div id="q16">
+				<h2>
+					6) In the Western Air Temple, what animal does Zuko talk to before asking to join Team Avatar?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Panda Mole</li>
+					<li id="q" name='badgerFrog'>B. Badger Frog</li>
+					<li id="q" name='wrong'>C. Lion Dog</li>
+					<li id="q" name='wrong'>D. Tiger Monkey</li>
+					<li id="q" name='wrong'>E. Flying Bison</li>
+				</ul>
+			</div>
+			<div id="q17">
+				<h2>
+					7) What spirit guards the library? 
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Yue</li>
+					<li id="q" name='wrong'>B. Koh</li>
+					<li id="q" name='wrong'>C. Raava</li>
+					<li id="q" name='wrong'>D. Vaatu</li>
+					<li id="q" name='wanshitong'>E. Wan Shi Tong</li>
+				</ul>
+			</div>
+			<div id="q18">
+				<h2>
+					8) Who is June?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Kyoshi Warrior</li>
+					<li id="q" name='bounty'>B. Bounty Hunter</li>
+					<li id="q" name='wrong'>C. Firebender</li>
+					<li id="q" name='wrong'>D. Avatar</li>
+					<li id="q" name='wrong'>E. Spirit</li>
+				</ul>
+			</div>
+			<div id="q19">
+				<h2>
+					9) Who is the girl that took Zuko out in Ba Sing Se?
+				</h2>
+				<ul>
+					<li id="q" name='wrong'>A. Yue</li>
+					<li id="q" name='jin'>B. Jin</li>
+					<li id="q" name='wrong'>C. Onji</li>
+					<li id="q" name='wrong'>D. Katara</li>
+					<li id="q" name='wrong'>E. Li</li>
+				</ul>
+			</div>
+			<div id="q20">
+				<h2>
+					10) In the end of Avatar: The Last Airbender Aang...
+				</h2>
+				<ul>
+					<li id="q" name='energybending'>A. took away Ozai's firebending by energybending</li>
+					<li id="q" name='wrong'>B. killed Ozai</li>
+					<li id="q" name='wrong'>C. used the Avatar State to destroy the Fire Nation</li>
+					<li id="q" name='wrong'>D. fled to the spirit world</li>
+					<li id="q" name='wrong'>E. had Zuko convince Ozai to stop</li>
+				</ul>
+			</div>
+		</form>
+		<div id="end">
+			<h1>
+				Congratulations. 
+			</h1>
+			<p>
+				You got the answer for all ten questions. Try out the other difficulty
+				to see how great your Avatar: The Last Airbender knowledge is.
+			</p>
+		</div>
+		<footer>
+			<h2>
+				<a href="..\atla.html">Team Avatar</a>
+			</h2>
+			<p>
+				&uarr; to return to the main menu.
+			</p>
+			<ul>
+				<li><a href="air.html">Airbending</a> | <a href="aang.html">Aang</a></li>
+				<li><a href="water.html">Waterbending</a> | <a href="katara.html">Katara</a></li>
+				<li><a href="earth.html">Earthbending</a> | <a href="toph.html">Toph</a></li>
+				<li><a href="fire.html">Firebending</a> | <a href="zuko.html">Zuko</a></li>
+				<li><a href="non.html">Nonbenders</a> | <a href="suki.html">Suki</a> | <a href="sokka.html">Sokka</a></li><br>
+			</ul>
+		</footer>
+	</div>
+</html>
